@@ -5,6 +5,11 @@ public class Libro{
     private String autor;
     private int anio;
     //constructores
+    public Libro(){
+        this.titulo = null;
+        this.autor = null;
+        this.anio = 0;
+    }
     public Libro(String titulo,String autor, int anio){
         this.titulo = titulo;
         this.autor = autor;
