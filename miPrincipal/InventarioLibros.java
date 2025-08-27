@@ -28,12 +28,20 @@ public class InventarioLibros {
         }
 
     }
-    public Libro buscar(String autor){
+    public Libro[] buscar(String autor){
+        Libro[] librosEncontrados = new Libro[2];
         for(int i=0;i<contador;i++){
-            if(listaLibros[i].getAutor().equalsIgnoreCase(autor))
-               return listaLibros[i];
+            if(listaLibros[i].getAutor().equalsIgnoreCase(autor)) {
+               if (i >= librosEncontrados.length) {
+                    Libro[] listaLibrosTemp = new Libro[librosEncontrados.length*2];
+                    for (int x = 0; x < librosEncontrados.length; x++) {
+                        listaLibrosTemp[x] = librosEncontrados[x];
+                    }
+               }
+               librosEncontrados[i] = listaLibros[i];
+            }
         }
-       return null;
+       return librosEncontrados;
 
     }
     
