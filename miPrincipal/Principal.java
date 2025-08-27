@@ -34,7 +34,7 @@ public class Principal {
                     autor = entrada.nextLine();
                     Libro[] librobuscado;
                     librobuscado = inventarioLibros.buscar(autor);
-                    if(librobuscado != null){
+                    if(librobuscado[0] != null){
                         for (int i = 0; i < librobuscado.length; i++) {
                             System.out.println("Libro Encontrado: "+librobuscado[i].toString());
                         }
